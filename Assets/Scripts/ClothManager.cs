@@ -51,17 +51,19 @@ public class ClothManager : MonoBehaviour
     {
         if (coins != 0)
         {
-                if (currentPant != null && ! currentPant.GetComponent<ClothDescription>().isPurchased)
+            if (currentPant != null && ! currentPant.GetComponent<ClothDescription>().isPurchased
+                && coins-int.Parse(currentPant.GetComponent<ClothDescription>().price) > 0 )
             {
                 coins -= int.Parse(currentPant.GetComponent<ClothDescription>().price);
-                coinsTb.text = "Price:" + coins;
+                coinsTb.text = "Coins:" + coins;
                 currentPant.GetComponent<ClothDescription>().isPurchased = true;
                 isPurchasedTb.text = "Is Purchased:" + true;
             }
-            if (currentShirt != null && ! currentShirt.GetComponent<ClothDescription>().isPurchased)
+            if (currentShirt != null && ! currentShirt.GetComponent<ClothDescription>().isPurchased
+                 && coins - int.Parse(currentShirt.GetComponent<ClothDescription>().price) > 0)
             {
                 coins -= int.Parse(currentShirt.GetComponent<ClothDescription>().price);
-                coinsTb.text = "Price:" + coins;
+                coinsTb.text = "Coins:" + coins;
                 currentShirt.GetComponent<ClothDescription>().isPurchased = true;
                 isPurchasedTb.text = "Is Purchased:" + true;
             }
@@ -76,14 +78,14 @@ public class ClothManager : MonoBehaviour
         if (currentPant != null && currentPant.GetComponent<ClothDescription>().isPurchased)
         {
             coins += int.Parse(currentPant.GetComponent<ClothDescription>().price);
-            coinsTb.text = "Price:" + coins;
+            coinsTb.text = "Coins:" + coins;
             currentPant.GetComponent<ClothDescription>().isPurchased = false;
             isPurchasedTb.text = "Is Purchased:" + false;
         }
         if (currentShirt != null && currentShirt.GetComponent<ClothDescription>().isPurchased)
         {
             coins += int.Parse(currentShirt.GetComponent<ClothDescription>().price);
-            coinsTb.text = "Price:" + coins;
+            coinsTb.text = "Coins:" + coins;
             currentShirt.GetComponent<ClothDescription>().isPurchased = false;
             isPurchasedTb.text = "Is Purchased:" + false;
         }
