@@ -5,6 +5,8 @@ using UnityEngine;
 public class interactionShopkeeper : MonoBehaviour
 {
     public GameObject shopkeeperInteractTb;
+
+    public dialogue dialogues;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,8 @@ public class interactionShopkeeper : MonoBehaviour
     {
         if (Input.GetKeyDown("e") && shopkeeperInteractTb.activeInHierarchy)
         {
-            Debug.Log("Start dialouge between player and shopkeeper");
+            shopkeeperInteractTb.SetActive(false);
+            dialogues.startDialouge();
         }
     }
 
