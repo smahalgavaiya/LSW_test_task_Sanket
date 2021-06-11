@@ -19,6 +19,7 @@ public class playerMovement : MonoBehaviour
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 		verticalMove = Input.GetAxisRaw("Vertical") * runSpeed;
+
 		if (horizontalMove > 0 || verticalMove > 0)
 		{
 			playerAnimator.SetBool("IsWalking", true);

@@ -1,0 +1,4 @@
+Shopkeeper: Hey dear friend what you'r looking for?
+Player: Hey i'm looking some shirts and pants.
+Shopkeeper: That's great we have some new collections you should go in trial room and try them.
+Player: Okay, I'm going,bye.
